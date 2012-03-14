@@ -48,9 +48,6 @@ if(isset($_POST['name'])) {
 
     $query = "INSERT INTO `comments` VALUES (null, '" . $_POST['name'] . "', '" . $_POST['comment'] . "');";
     mysql_query($query);
-
-    header('Location: xss.php');
-    return;
 }
 ?>
 
