@@ -71,6 +71,9 @@ if(isset($_POST['name'])) {
     <br />
     <input type='text' id='comment' name='comment'>
     <input type='submit' value='submit'>
-</form> 
+</form>
+<br />
+<i>Hint: try entering the following for your comment:</i>
+<pre>&lt;script type="text/javascript" src="malicious-script.js" /&gt;</pre>
 </body>
 </html>
