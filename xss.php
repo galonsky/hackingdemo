@@ -57,7 +57,7 @@ if(isset($_POST['name'])) {
 <?php showComments(); ?>
 <br /><br />
 <h2>Enter a new comment:</h2>
-<form action='xss.php' method='post'>
+<form id="form" action='xss.php' method='post'>
     <label for='name'>Enter your name:</label>
     <br />
     <input type='text' id='name' name='name'>
@@ -75,5 +75,6 @@ if(isset($_POST['name'])) {
 <br />
 <i>Hint: try entering the following for your comment:</i>
 <pre>&lt;script type="text/javascript" src="malicious-script.js"&gt;&lt;/script&gt;</pre>
+<i>After you submit this comment, try adding another regular comment and see what happens</i>
 </body>
 </html>
