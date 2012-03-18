@@ -7,8 +7,9 @@
 $envFile = @file_get_contents("/home/dotcloud/environment.json");
 if ($envFile) {
     $envjson = json_decode($envFile,true);
-    $host = $envjson['DOTCLOUD_DB_MYSQL_HOST'];
     $port = $envjson['DOTCLOUD_DB_MYSQL_PORT'];
+    $host = $envjson['DOTCLOUD_DB_MYSQL_HOST'] . ":$port";
+    print $host;
     $username = $envjson['CPS182_DEMO_USER'];
     $password = $envjson['CPS182_DEMO_PASS'];
     $dbname = $envjson['CPS182_DEMO_DB'];
