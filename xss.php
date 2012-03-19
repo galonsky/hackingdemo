@@ -1,7 +1,17 @@
 <?php
 
 //includes $host, $username, $password, $dbname
-require_once("db.php");
+$envFile = @file_get_contents("/home/dotcloud/environment.json");
+if ($envFile) {
+    $envjson = json_decode($envFile,true);
+    $port = $envjson['DOTCLOUD_DB_MYSQL_PORT'];
+    $host = $envjson['DOTCLOUD_DB_MYSQL_HOST'] . ":$port";
+    $username = $envjson['CPS182_DEMO_USER'];
+    $password = $envjson['CPS182_DEMO_PASS'];
+    $dbname = $envjson['CPS182_DEMO_DB'];
+} else {
+    require_once("db.php");
+}
 
 function reset_table() {
     $query = "DROP TABLE IF EXISTS `comments`;";
