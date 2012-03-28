@@ -41,10 +41,12 @@ if(isset($_GET['name'])) {
     $result = mysql_query($query);
     $num = mysql_num_rows($result);
     if($num > 0) {
-        echo "<p>Authenticated sucessfully.</p>";
+        echo "<p><b>Authenticated sucessfully.</b></p>";
     } else {
-        echo "<p>Incorrect credentials.</p>";
+        echo "<p><b>Incorrect credentials.</b></p>";
     }
+
+    echo "<p>Query Run: " . $query . "</p>";
 }
 
 
@@ -56,5 +58,6 @@ if(isset($_GET['name'])) {
 </form>
 <p>Hint: here's the query that's being run:</p>
 <pre>$query = "SELECT * FROM users WHERE username = '" . $name . "';";</pre>
+<p>If you really can't figure it out, <a href='http://en.wikipedia.org/wiki/Sql_injection#Incorrectly_filtered_escape_characters'>here's how it's done</a></p>
 </body>
 </html>
